@@ -34,7 +34,7 @@ $(function() {
         it('should have a url', function() {
             allFeeds.map(function(allFeed) {
                 expect(allFeed.url).toBeDefined();
-                expect(allFeed.url.length > 8).toBe(true);
+                expect(allFeed.url.length > 0).toBe(true);
             });
         });
 
@@ -47,9 +47,7 @@ $(function() {
         it('should have a name', function() {
             allFeeds.map(function(allFeed) {
                  expect(allFeed.name).toBeDefined();
-                expect(allFeed.name.length > 0).toBe(true);
-            });
-        });
+                expect(allFeed.name.length).toBeGreaterThan(0);
     });
 
 
@@ -86,10 +84,7 @@ $(function() {
     /*  Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-
-            });
+            loadFeed(0,done);
         });
 
 
